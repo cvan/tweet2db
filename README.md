@@ -63,7 +63,7 @@ Then launch the site from your favourite browser:
 
 If you wish to serve the site from a different port:
 
-    MOZ_GDC_PORT=8000 npm run dev
+    TWEET2DB_PORT=8000 npm run dev
 
 
 ## Deployment
