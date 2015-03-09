@@ -7,11 +7,19 @@ A bot that accepts data from a tweet and saves it in a key-value store.
 
 1. Install the Node dependencies:
 
-	    npm install
+        npm install
 
 2. Generate a local settings file:
 
-		cp settings_local.js{.dist,}
+        cp settings_local.js{.dist,}
+
+3. Install Redis:
+
+        brew install redis
+
+4. Set up Redis:
+
+        brew info redis
 
 
 ## Development

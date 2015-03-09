@@ -4,6 +4,8 @@ module.exports = {
   HOST: process.env.HOST || '0.0.0.0',
   PORT: process.env.PORT || 5000,
 
+  CORS: true,
+
   // Register your Twitter application here: https://apps.twitter.com/app/new
   TWITTER_CONSUMER_KEY: '',
   TWITTER_CONSUMER_SECRET: '',
