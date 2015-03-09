@@ -3,6 +3,35 @@
 A bot that accepts data from a tweet and saves it in a key-value store.
 
 
+## Sample Usage
+
+Tweet at [@tweet2db](https://twitter.com/tweet2db), like so:
+
+    @tweet2db yolo='themotto'
+
+Make sure the database is refreshed. To force a refresh, you can hit this URL:
+
+[__https://tweet2db.herokuapp.com/refresh__](http://tweet2db.herokuapp.com/refresh)
+
+Then get the data by hitting the URL directly:
+
+[__https://tweet2db.herokuapp.com/data/`<your_twitter_username>`/yolo__](http://tweet2db.herokuapp.com/data/<your_twitter_username>/yolo)
+
+Or via XHR from a web page:
+
+```js
+var xhr = new XMLHttpRequest();
+xhr.open('get', 'https://tweet2db.herokuapp.com/data/<your_twitter_username>/yolo', true);
+xhr.onload = function () {
+  console.log(xhr.responseText);
+};
+xhr.onerror = function (e) {
+  console.error('XHR error: ' + e.error);
+};
+xhr.send();
+```
+
+
 ## Installation
 
 1. Install the Node dependencies:
