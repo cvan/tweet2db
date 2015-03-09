@@ -81,6 +81,14 @@ function parseTweet(str) {
 }
 
 
+function isValidJSON(str) {
+  // Lifted from https://github.com/douglascrockford/JSON-js/blob/master/json2.js
+  return /^[\],:{}\s]*$/.test(str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@')
+    .replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+    .replace(/(?:^|:|,)(?:\s*\[)+/g, ''));
+}
+
+
 internals.server.connection({
   host: settings.HOST,
   port: settings.PORT,
@@ -130,7 +138,11 @@ Record.get = {
         return reply(Boom.notFound('does_not_exist'));
       }
 
-      reply(data);
+      if (isValidJSON(data)) {
+        reply(data).type('application/json');
+      } else {
+        reply(data).type('text/plain');
+      }
     });
   }
 };
