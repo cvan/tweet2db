@@ -1,6 +1,6 @@
 # tweet2db
 
-A bot that takes a tweet and saves it in a key-value store.
+A bot that accepts data from a tweet and saves it in a key-value store.
 
 
 ## Installation

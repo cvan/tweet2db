@@ -1,7 +1,7 @@
 {
   "name": "tweet2db",
   "version": "0.0.1",
-  "description": "a bot that takes a tweet and saves it in a key-value store",
+  "description": "a bot that accepts data from a tweet and saves it in a key-value store",
   "license": "MIT",
   "repository": {
     "type": "git",
