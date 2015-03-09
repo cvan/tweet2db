@@ -51,7 +51,7 @@ function retrieve(user, key, cb) {
 }
 
 
-function remove(user, key) {
+function remove(user, key, cb) {
   redis.del(user + ':' + key, function (err, reply) {
     if (cb) {
       cb(err, reply);
@@ -150,7 +150,7 @@ Record.get = {
 
 Record.remove = {
   handler: function (request, reply) {
-    retrieve(request.params.user, request.params.key, function (data) {
+    retrieve(request.params.user, request.params.key, function (err, data) {
       if (typeof data === 'undefined' || data === null) {
         return reply(Boom.notFound('does_not_exist'));
       }
