@@ -7,10 +7,10 @@ module.exports = {
   CORS: true,
 
   // Register your Twitter application here: https://apps.twitter.com/app/new
-  TWITTER_CONSUMER_KEY: '',
-  TWITTER_CONSUMER_SECRET: '',
-  TWITTER_ACCESS_TOKEN: '',
-  TWITTER_ACCESS_TOKEN_SECRET: ''
+  TWITTER_CONSUMER_KEY: process.env.TWEET2DB_TWITTER_CONSUMER_KEY || '',
+  TWITTER_CONSUMER_SECRET: process.env.TWEET2DB_TWITTER_CONSUMER_SECRET || '',
+  TWITTER_ACCESS_TOKEN: process.env.TWEET2DB_TWITTER_ACCESS_TOKEN || '',
+  TWITTER_ACCESS_TOKEN_SECRET: process.env.TWEET2DB_TWITTER_ACCESS_TOKEN_SECRET || ''
 };
 
 
