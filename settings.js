@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  HOST: process.env.HOST || '0.0.0.0',
-  PORT: process.env.PORT || 5000,
+  HOST: process.env.VRFOX_HOST || process.env.HOST || '0.0.0.0',
+  PORT: process.env.VRFOX_PORT || process.env.PORT || 5000,
 
   CORS: true,
 
@@ -14,7 +14,7 @@ module.exports = {
 };
 
 
-var settings_path = process.env.TWEET2DB_SETTINGS || './settings_local';
+var settings_path = process.env.TWEET2DB_SETTINGS || process.env.SETTINGS || './settings_local';
 
 var settings_local;
 
