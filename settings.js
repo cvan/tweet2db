@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  HOST: process.env.VRFOX_HOST || process.env.HOST || '0.0.0.0',
-  PORT: process.env.VRFOX_PORT || process.env.PORT || 5000,
+  HOST: process.env.TWEET2DB_HOST || process.env.HOST || '0.0.0.0',
+  PORT: process.env.TWEET2DB_PORT || process.env.PORT || 5000,
 
   CORS: true,
 
