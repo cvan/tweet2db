@@ -110,8 +110,7 @@ Record.refresh = {
   handler: function (request, reply) {
     internals.T.get('statuses/mentions_timeline', function (err, data, response) {
       if (err) {
-        console.error(err);
-        return Boom.internal({error: err});
+        return reply(Boom.internal({error: err}));
       }
 
       data.forEach(function (tweet) {
@@ -129,8 +128,7 @@ Record.get = {
   handler: function (request, reply) {
     retrieve(request.params.user, request.params.key, function (err, data) {
       if (err) {
-        console.error(err);
-        return Boom.internal({error: err});
+        return reply(Boom.internal({error: err}));
       }
 
       if (typeof data === 'undefined' || data === null) {
@@ -156,8 +154,7 @@ Record.remove = {
 
       remove(request.params.user, request.params.key, function (err, data) {
         if (err) {
-          console.error(err);
-          return Boom.internal({error: err});
+          return reply(Boom.internal({error: err}));
         }
 
         reply({success: true});
